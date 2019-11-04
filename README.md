@@ -10,17 +10,17 @@ Fuzzers for wasmer and tips/commands to run them.
 
 Fuzzers are inside [fuzz](fuzz) folder.
 
-Checkout `CARGOFUZZ.md` for more details.
+Checkout [cargofuzz.md](cargofuzz.md) for more details.
 
-## Honggfuzz
+## honggfuzz
 
 Fuzzers are inside [hfuzz](hfuzz) folder.
 
-Checkout `HONGGFUZZ.md` for more details.
+Checkout [honggfuzz.md](honggfuzz.md) for more details.
 
 ## afl-rs
 
-Checkout `AFL.md` for more details.
+Checkout [afl.md](afl.md) for more details.
 
 ## Custom fuzzers
 

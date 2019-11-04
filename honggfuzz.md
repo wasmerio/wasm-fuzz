@@ -12,11 +12,11 @@ Full compatibility list [here](https://github.com/rust-fuzz/honggfuzz-rs#compati
 
 On Linux:
 ``` sh
-sudo apt install build-essential binutils-dev libunwind-dev libblocksruntime-dev
+$ sudo apt install build-essential binutils-dev libunwind-dev libblocksruntime-dev
 ```
 then:
 ``` sh
-cargo install honggfuzz
+$ cargo install honggfuzz
 ```
 
 # Honggfuzz + wasmer
@@ -113,11 +113,11 @@ This fuzzer use `binaryen::tools::translate_to_fuzz_mvp` to convert `data` into 
 - cmd:
 ``` sh
 # uncomment line 16 of Cargo.toml => # binaryen = "0.8.1"
-cargo +nightly hfuzz run instantiate_binaryen
+$ cargo +nightly hfuzz run instantiate_binaryen
 ```
 More info about this API [here](https://github.com/WebAssembly/binaryen/wiki/Fuzzing#fuzzing).
 
-## Tips/options for Honggfuzz
+# Tips/options for Honggfuzz
 
 `HFUZZ_RUN_ARGS` is used to provide options to honggfuzz.
 Some of the most usefull are:
@@ -136,11 +136,11 @@ Some of the most usefull are:
 	[...]
 ```
 
-## Example
+# Example
 
 Copy input dataset files inside `hfuzz_workspace/compile/input` then run the fuzzer with:
 ``` sh
-HFUZZ_RUN_ARGS="-t 2 -n 6" cargo +nightly hfuzz run compile
+$ HFUZZ_RUN_ARGS="-t 2 -n 6" cargo +nightly hfuzz run compile
 ```
 
 <p align="center">

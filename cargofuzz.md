@@ -9,7 +9,7 @@ Cargo-fuzz repository: [cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz).
 # Installation
 
 ``` sh
-cargo install --force cargo-fuzz
+$ cargo install --force cargo-fuzz
 ```
 
 # cargo-fuzz + wasmer
@@ -47,7 +47,7 @@ Not really interesting to use this fuzzer because every valid errors through by 
 - src: `fuzz_targets/simple_instantiate.rs`.
 - cmd: `cargo +nightly fuzz run simple_instantiate`.
 
-## Tips/options for cargo-fuzz
+# Tips/options for cargo-fuzz
 
 Help: `cargo fuzz run --help`
 
@@ -83,7 +83,7 @@ TODO - write specific section in README.md or here?
     tmin    Test case minifier
 ```
 
-## Example
+# Example
 
 <p align="center">
 	<img src="/images/cargofuzz_interface.png" height="400px"/>
