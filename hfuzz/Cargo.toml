@@ -1,0 +1,48 @@
+[package]
+name = "hfuzz"
+version = "0.1.0"
+authors = ["Patrick Ventuzelo <ventuzelo.patrick@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+honggfuzz = "0.5"
+wasmer-runtime = { path = "../lib/runtime" }
+wasmer-runtime-core = { path = "../lib/runtime-core" }
+wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
+wasmer-llvm-backend = { path = "../lib/llvm-backend" }
+wasmer = { path = "../" }
+# binaryen = "0.8.1"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "compile"
+path = "src/compile.rs"
+
+[[bin]]
+name = "compile_with_threads"
+path = "src/compile_with_threads.rs"
+
+[[bin]]
+name = "compile_with_config_with_llvm"
+path = "src/compile_with_config_with_llvm.rs"
+
+[[bin]]
+name = "compile_kwasmd_config"
+path = "src/compile_kwasmd_config.rs"
+
+[[bin]]
+name = "validate_all_feat"
+path = "src/validate_all_feat.rs"
+
+[[bin]]
+name = "simple_instantiate"
+path = "src/simple_instantiate.rs"
+
+[[bin]]
+name = "instantiate_binaryen"
+path = "src/instantiate_binaryen.rs"
