@@ -2,9 +2,7 @@
 
 *Honggfuzz is security oriented, feedback-driven, evolutionary, easy-to-use fuzzer with interesting analysis options* - [source](https://github.com/google/honggfuzz)
 
-Honggfuzz for Rust is available here: [honggfuzz-rs](https://github.com/rust-fuzz/honggfuzz-rs) / [Documentation](https://docs.rs/honggfuzz/0.5.45/honggfuzz/)
-
-honggfuzz-rs can be used with:
+Honggfuzz for Rust is available here: [honggfuzz-rs](https://github.com/rust-fuzz/honggfuzz-rs) / [Documentation](https://docs.rs/honggfuzz/0.5.45/honggfuzz/) and can be used with:
 - Rust: stable, beta, nightly.
 - Sanitizer: none, address, thread, leak.
 
@@ -12,9 +10,12 @@ Full compatibility list [here](https://github.com/rust-fuzz/honggfuzz-rs#compati
 
 # Installation
 
+On Linux:
 ``` sh
-# for linux: 
 sudo apt install build-essential binutils-dev libunwind-dev libblocksruntime-dev
+```
+then:
+``` sh
 cargo install honggfuzz
 ```
 
@@ -23,6 +24,7 @@ cargo install honggfuzz
 Copy the `hfuzz` folder inside `wasmer` repository.
 
 Move to honggfuzz folder: `cd hfuzz/`.
+
 Input files need to be copied in `hfuzz_workspace/FUZZER_NAME/input`.
 
 ## compile
@@ -107,13 +109,13 @@ warning: build failed, waiting for other jobs to finish...
 ```
 
 This fuzzer use `binaryen::tools::translate_to_fuzz_mvp` to convert `data` into a valid wasm module somehow.
-More info about this API [here](https://github.com/WebAssembly/binaryen/wiki/Fuzzing#fuzzing).
 - src: `src/instantiate_binaryen.rs`.
 - cmd:
 ``` sh
 # uncomment line 16 of Cargo.toml => # binaryen = "0.8.1"
 cargo +nightly hfuzz run instantiate_binaryen
 ```
+More info about this API [here](https://github.com/WebAssembly/binaryen/wiki/Fuzzing#fuzzing).
 
 ## Tips/options for Honggfuzz
 
