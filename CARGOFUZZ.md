@@ -101,3 +101,9 @@ TODO - write specific section in README.md or here?
     cmin    Corpus minifier
     tmin    Test case minifier
 ```
+
+## Example
+
+<p align="center">
+	<img src="/images/cargofuzz_interface.png" height="400px"/>
+</p>
