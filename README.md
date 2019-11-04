@@ -8,14 +8,15 @@ Fuzzers for wasmer and tips/commands to run them.
 
 ## cargo-fuzz (libfuzzer)
 
-Fuzzers inside [fuzz](fuzz) folder.
+Fuzzers are inside [fuzz](fuzz) folder.
+
 Checkout `CARGOFUZZ.md` for more details.
 
 ## Honggfuzz
 
-Fuzzers inside [hfuzz](hfuzz) folder.
-Checkout `HONGGFUZZ.md` for more details.
+Fuzzers are inside [hfuzz](hfuzz) folder.
 
+Checkout `HONGGFUZZ.md` for more details.
 
 ## afl-rs
 
