@@ -1,22 +1,30 @@
-# wasm-fuzz (should me renamed wasmer-fuzz ??)
-Fuzzers for wasmer
+# wasm-fuzz (should be renamed wasmer-fuzz ??)
 
-# libfuzzer (cargo-fuzz)
+Fuzzers for wasmer and tips/commands to run them.
 
-TODO
+# cargo-fuzz (libfuzzer)
+
+Checkout `CARGOFUZZ.md`
+Fuzzers inside `fuzz` folder.
 
 # Honggfuzz
 
-TODO
+Checkout `HONGGFUZZ.md`
+Fuzzers inside `hfuzz` folder.
 
 # afl-rs
 
-TODO
+Checkout `AFL.md`
 
-# custom fuzzers
-
-TODO
-
-# code coverage
+# Custom fuzzers
 
 TODO
+
+# Code coverage
+
+TODO
+
+# Crashes analysis
+
+
+Patrick Ventuzelo - [pventuzelo](https://github.com/pventuzelo)
