@@ -20,6 +20,8 @@ Checkout [honggfuzz.md](honggfuzz.md) for more details.
 
 ## afl-rs
 
+Fuzzers are inside [afl-fuzz](afl-fuzz) folder.
+
 Checkout [afl.md](afl.md) for more details.
 
 ## Custom fuzzers
@@ -28,10 +30,10 @@ TODO
 
 # Code coverage
 
-TODO
+TODO - create specific .md
 
 # Crashes analysis
 
-TODO
+TODO - create specific .md
 
 Patrick Ventuzelo - [pventuzelo](https://github.com/pventuzelo)
