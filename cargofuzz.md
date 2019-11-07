@@ -51,7 +51,7 @@ Not really interesting to use this fuzzer because every valid errors through by 
 
 Help: `cargo fuzz run --help`
 
-Interesting options
+Interesting options:
 ``` sh
 	[...]
     -O, --release                Build artifacts in release mode, with optimizations
