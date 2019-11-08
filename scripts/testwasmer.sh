@@ -5,7 +5,7 @@ result=1
 
 trap 'rm -f ${tempfile}; exit ${result}' EXIT TERM ALRM
 
-wasmer run ${tempfile}
+./target/release/wasmer run ${tempfile}
 
 # Check if we were killed with SIGSEGV
 if test $? -eq 101; then

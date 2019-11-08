@@ -27,8 +27,8 @@ TODO
 
 # Corpus minimization
 
-Checkout [corpus_minimization.md](corpus_minimization.md) for more details.
-Checkout [testcase_minimization.md](testcase_minimization.md) for more details.
+- Checkout [corpus_minimization.md](corpus_minimization.md) for more details.
+- Checkout [testcase_minimization.md](testcase_minimization.md) for more details.
 
 # Code coverage
 

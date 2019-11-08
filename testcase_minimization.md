@@ -9,7 +9,8 @@ Test case minimizer tools (like afl-tmin) takes an input file and tries to remov
 ## cargo-fuzz (cargo fuzz tmin)
 
 More details about cargo-fuzz [here](cargofuzz.md).
-Help: `cargo fuzz tmin -h`
+
+Help: `cargo fuzz tmin -h`.
 
 ``` sh
 cargo-fuzz-tmin 0.5.4
@@ -41,12 +42,14 @@ ARGS:
 ## honggfuzz (TODO)
 
 More details about cargo-fuzz [here](honggfuzz.md).
-TODO - add details
+
+TODO - add details.
 
 ## afl-rs (cargo afl tmin)
 
 More details about cargo-fuzz [here](afl.md).
-Help: `cargo afl tmin help`
+
+Help: `cargo afl tmin help`.
 
 ``` sh
 afl-tmin 2.52b by <lcamtuf@google.com>
@@ -91,7 +94,7 @@ $ make
 ### Interesting options
 
 - `--num-threads=threads`: Halfempty will default to using all available cores, but you can tweak this if you prefer.
-- `--zero-char=byte`: Halfempty tries to simplify files by overwriting data with null bytes. **For wasm module, it's better to use 0x01 (i.e. nop instructions)**.
+- `--zero-char=byte`: Halfempty tries to simplify files by overwriting data with null bytes. **For wasm module, it's better to use 0x01 (i.e. nop instruction)**.
 - `--monitor`: If you have the graphviz package installed, halfempty can generate graphs so you watch the progress.
 
 ### Script for wasmer
@@ -114,7 +117,9 @@ if test $? -eq 101; then
 fi
 ```
 
-Sometimes your target program might crash with a different crash accidentally found during minimization. One solution might be to use gdb to verify the crash site. Example [here](https://github.com/googleprojectzero/halfempty#verifying-crashes)
+Sometimes your target program might crash with a different crash accidentally found during minimization. One solution might be to use gdb to verify the crash site.
+
+Example [here](https://github.com/googleprojectzero/halfempty#verifying-crashes).
 
 
 
