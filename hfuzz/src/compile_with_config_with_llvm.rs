@@ -9,8 +9,10 @@ use wasmer_runtime_core::{
         backend::{CompilerConfig, Compiler, Features},
     };
 
-use wasmer_llvm_backend::{LLVMCompiler};
-
+fn get_llvm_compiler() -> impl Compiler {
+    use wasmer_llvm_backend::LLVMCompiler;
+    LLVMCompiler::new()
+}
 // TODO fix compilation 
 // RUNNING CMD:
 // cargo +nightly hfuzz run compile_with_config_with_llvm
@@ -28,8 +30,8 @@ fn main() {
                 ..Default::default()
             };
 
-            let compiler: Box<dyn Compiler> = Box::new(LLVMCompiler::new());
-            let _ = compile_with_config_with(data, config, &*compiler);
+            //let compiler: Box<dyn Compiler> = Box::new(LLVMCompiler::new());
+            let _ = compile_with_config_with(data, config, &get_llvm_compiler());
         });
     }
 }
