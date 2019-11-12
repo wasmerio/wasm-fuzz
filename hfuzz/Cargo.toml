@@ -28,6 +28,10 @@ name = "compile_with_threads"
 path = "src/compile_with_threads.rs"
 
 [[bin]]
+name = "compile_with_llvm"
+path = "src/compile_with_llvm.rs"
+
+[[bin]]
 name = "compile_with_config_with_llvm"
 path = "src/compile_with_config_with_llvm.rs"
 
