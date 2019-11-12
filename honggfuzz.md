@@ -42,20 +42,14 @@ Fuzzer using `wasmer_runtime::compile_with_config` API with:
 - src: `src/compile_with_threads.rs`.
 - cmd: `cargo +nightly hfuzz run compile_with_threads`.
 
-## compile_with_config_with_llvm [TODO FIX]
+## compile_with_llvm
 
-TODO FIX: this fuzzer is broken because of LLVM compilation issue:
-``` sh
-	[...]
-	collect2: error: ld returned 1 exit status
-          
+Fuzzer using `wasmer_runtime::compile_with` API with:
+- **backend: llvm**
+- src: `src/compile_with_llvm.rs`.
+- cmd: `cargo +nightly hfuzz run compile_with_llvm`.
 
-error: aborting due to previous error
-
-error: could not compile `hfuzz`.
-
-To learn more, run the command again with --verbose.
-```
+## compile_with_config_with_llvm
 
 Fuzzer using `wasmer_runtime::compile_with_config_with` API with:
 - **simd: true**
