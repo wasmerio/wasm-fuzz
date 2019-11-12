@@ -22,6 +22,13 @@ Simple fuzzer calling `wasmer_runtime::compile`.
 - src: `fuzz_targets/compile.rs`.
 - cmd: `cargo +nightly fuzz run compile`.
 
+## compile_with_llvm
+
+Fuzzer using `wasmer_runtime::compile_with` API with:
+- **backend: llvm**
+- src: `fuzz_targets/compile_with_llvm.rs`.
+- cmd: `cargo +nightly fuzz run compile_with_llvm`.
+
 ## validate
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:

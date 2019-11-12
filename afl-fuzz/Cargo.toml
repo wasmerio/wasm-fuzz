@@ -10,6 +10,7 @@ edition = "2018"
 afl = "0.5"
 wasmer-runtime = { path = "../lib/runtime" }
 wasmer-runtime-core = { path = "../lib/runtime-core" }
+wasmer-llvm-backend = { path = "../lib/llvm-backend" }
 wasmer = { path = "../" }
 
 # Prevent this from interfering with workspaces
@@ -23,6 +24,10 @@ path = "src/simple_instantiate.rs"
 [[bin]]
 name = "compile"
 path = "src/compile.rs"
+
+[[bin]]
+name = "compile_with_llvm"
+path = "src/compile_with_llvm.rs"
 
 [[bin]]
 name = "validate"

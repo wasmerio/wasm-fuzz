@@ -24,6 +24,24 @@ Simple fuzzer calling `wasmer_runtime::compile`.
 - src: `src/compile.rs`.
 - cmd: `cargo afl fuzz -i in -o out target/debug/compile`.
 
+## compile_with_llvm [TODO FIX]
+
+TODO FIX: this fuzzer is broken because of LLVM compilation issue:
+``` sh
+	[...]
+	collect2: error: ld returned 1 exit status
+
+error: aborting due to previous error
+
+error: could not compile `afl-fuzz`.
+```
+
+Fuzzer using `wasmer_runtime::compile_with` API with:
+- **backend: llvm**
+- src: `src/compile_with_llvm.rs`.
+- cmd: `cargo afl fuzz -i in -o out target/debug/compile_with_llvm`.
+
+
 ## validate
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
