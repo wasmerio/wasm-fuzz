@@ -40,6 +40,10 @@ name = "compile_kwasmd_config"
 path = "src/compile_kwasmd_config.rs"
 
 [[bin]]
+name = "validate"
+path = "src/validate.rs"
+
+[[bin]]
 name = "validate_all_feat"
 path = "src/validate_all_feat.rs"
 

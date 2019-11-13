@@ -66,6 +66,14 @@ Fuzzer using `wasmer_runtime::compile_with_config_with` API and the same config 
 - src: `src/compile_kwasmd_config.rs`.
 - cmd: `cargo +nightly hfuzz run compile_kwasmd_config`.
 
+## validate
+
+Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
+- **simd: false**
+- **threads: false**
+- src: `src/validate.rs`.
+- cmd: `cargo +nightly hfuzz run validate`.
+
 ## validate_all_feat
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` API with:
