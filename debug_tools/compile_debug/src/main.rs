@@ -40,6 +40,9 @@ fn main() {
 	let wasm_binary: Vec<u8> = read_contents(&wasm_path).unwrap();
     println!("wasm_binary: {:?}", wasm_binary);
 
-	let _res = compile_with(&wasm_binary[..], &get_llvm_compiler());
+    // CALL THE API HERE
+    let _res = compile_with(&wasm_binary[..], &get_llvm_compiler());
+    // CALL THE API HERE
+
     println!("Everything fine with {:?}", wasm_path);
 }
