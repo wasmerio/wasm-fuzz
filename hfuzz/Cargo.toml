@@ -13,7 +13,7 @@ wasmer-runtime-core = { path = "../lib/runtime-core" }
 wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
 wasmer-llvm-backend = { path = "../lib/llvm-backend" }
 wasmer = { path = "../" }
-# binaryen = "0.8.1"
+binaryen = "0.8.1"
 
 # Prevent this from interfering with workspaces
 [workspace]
