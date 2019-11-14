@@ -21,7 +21,7 @@ $ cargo afl build
 ## compile
 
 Simple fuzzer calling `wasmer_runtime::compile`.
-- src: `src/compile.rs`.
+- src: [src/compile.rs](afl-fuzz/src/compile.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/compile`.
 
 ## compile_with_llvm [TODO FIX]
@@ -38,7 +38,7 @@ error: could not compile `afl-fuzz`.
 
 Fuzzer using `wasmer_runtime::compile_with` API with:
 - **backend: llvm**
-- src: `src/compile_with_llvm.rs`.
+- src: [src/compile_with_llvm.rs](afl-fuzz/src/compile_with_llvm.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/compile_with_llvm`.
 
 
@@ -47,7 +47,7 @@ Fuzzer using `wasmer_runtime::compile_with` API with:
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
 - **simd: false**
 - **threads: false**
-- src: `src/validate.rs`.
+- src: [src/validate.rs](afl-fuzz/src/validate.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/validate`.
 
 ## validate_all_feat
@@ -55,14 +55,14 @@ Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_feat
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
 - **simd: true**
 - **threads: true**
-- src: `src/validate_all_feat.rs`.
+- src: [src/validate_all_feat.rs](afl-fuzz/src/validate_all_feat.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/validate_all_feat`.
 
 ## simple_instantiate
 
 Simple fuzzer calling `wasmer_runtime::instantiate` API with:
 - **imports: None**
-- src: `src/simple_instantiate.rs`.
+- src: [src/simple_instantiate.rs](afl-fuzz/src/simple_instantiate.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/simple_instantiate`.
 
 ## diff_compile [TODO FIX]
@@ -71,7 +71,7 @@ TODO FIX: This fuzzer is broken because of runtime issue with [libdiffuzz](https
 
 This fuzzer is calling `wasmer_runtime::compile` twice. This fuzzer is doing "differential fuzzing" i.e calling twice `wasmer_runtime::compile` and comparing the results.
 result1 != result2 is synonym of non-deterministic like usage of uninitialized memory.
-- src: `src/compile.rs`.
+- src: [src/diff_compile.rs](afl-fuzz/src/diff_compile.rs).
 - cmd: 
 ``` sh
 $ AFL_PRELOAD=path/to/libdiffuzz.so cargo afl fuzz -i in -o out target/debug/diff_compile

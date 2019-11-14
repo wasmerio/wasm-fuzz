@@ -19,14 +19,14 @@ Copy the `fuzz` folder inside `wasmer` repository and copy your input dataset co
 ## compile
 
 Simple fuzzer calling `wasmer_runtime::compile`.
-- src: `fuzz_targets/compile.rs`.
+- src: [fuzz_targets/compile.rs](fuzz/fuzz_targets/compile.rs).
 - cmd: `cargo +nightly fuzz run compile`.
 
 ## compile_with_llvm
 
 Fuzzer using `wasmer_runtime::compile_with` API with:
 - **backend: llvm**
-- src: `fuzz_targets/compile_with_llvm.rs`.
+- src: [fuzz_targets/compile_with_llvm.rs](fuzz/fuzz_targets/compile_with_llvm.rs).
 - cmd: `cargo +nightly fuzz run compile_with_llvm`.
 
 ## validate
@@ -34,7 +34,7 @@ Fuzzer using `wasmer_runtime::compile_with` API with:
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
 - **simd: false**
 - **threads: false**
-- src: `fuzz_targets/validate.rs`.
+- src: [fuzz_targets/validate.rs](fuzz/fuzz_targets/validate.rs).
 - cmd: `cargo +nightly fuzz run validate`.
 
 ## validate_all_feat
@@ -42,7 +42,7 @@ Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_feat
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
 - **simd: true**
 - **threads: true**
-- src: `fuzz_targets/validate_all_feat.rs`.
+- src: [fuzz_targets/validate_all_feat.rs](fuzz/fuzz_targets/validate_all_feat.rs).
 - cmd: `cargo +nightly fuzz run validate_all_feat`.
 
 ## simple_instantiate [USELESS/DEPRECATED]
@@ -51,7 +51,7 @@ TODO - verify if still the case with cargo-fuzz 0.5.4
 
 Not really interesting to use this fuzzer because every valid errors through by wasmer will be considered as crash by libfuzzer. In practice, that mean the fuzzer will crash almost immediately.
 
-- src: `fuzz_targets/simple_instantiate.rs`.
+- src: [fuzz_targets/simple_instantiate.rs](fuzz/fuzz_targets/simple_instantiate.rs).
 - cmd: `cargo +nightly fuzz run simple_instantiate`.
 
 # Tips/options for cargo-fuzz
