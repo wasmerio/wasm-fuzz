@@ -89,26 +89,9 @@ Simple fuzzer calling `wasmer_runtime::instantiate` API with:
 - src: [src/simple_instantiate.rs](hfuzz/src/simple_instantiate.rs).
 - cmd: `cargo +nightly hfuzz run simple_instantiate`.
 
-## basic_instantiate_binaryen [TODO FIX]
+## basic_instantiate_binaryen
 
-TODO FIX: this fuzzer is broken because of binaryen-sys compilation issue:
-``` sh
-error: failed to run custom build command for `binaryen-sys v0.8.1`
-
-Caused by:
-  process didn't exit successfully: `/home/scop/Documents/webassembly/wasmer/hfuzz/hfuzz_target/release/build/binaryen-sys-2cfdae2c026a1363/build-script-build` (exit code: 101)
---- stdout
-wrapper.h:1:10: fatal error: 'stdbool.h' file not found, err: true
-
---- stderr
-fatal: not a git repository (or any parent up to mount point /home)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
-wrapper.h:1:10: fatal error: 'stdbool.h' file not found
-thread 'main' panicked at 'Unable to generate bindings: ()', src/libcore/result.rs:1165:5
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
-
-warning: build failed, waiting for other jobs to finish...
-```
+WARNING: This fuzzer can be broken because of binaryen-sys compilation issue depending of your environment.
 
 This fuzzer use `binaryen::tools::translate_to_fuzz_mvp` to convert `data` into a valid wasm module somehow.
 - src: [src/instantiate_binaryen.rs](hfuzz/src/instantiate_binaryen.rs).
@@ -117,7 +100,7 @@ This fuzzer use `binaryen::tools::translate_to_fuzz_mvp` to convert `data` into 
 # uncomment line 16 of Cargo.toml => # binaryen = "0.8.1"
 $ cargo +nightly hfuzz run instantiate_binaryen
 ```
-More info about this API [here](https://github.com/WebAssembly/binaryen/wiki/Fuzzing#fuzzing).
+More info about this API [here](https://github.com/WebAssembly/binaryen/wiki/Fuzzing#fuzzing) and [here](https://github.com/pepyakin/binaryen-rs).
 
 # Tips/options for Honggfuzz
 
