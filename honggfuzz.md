@@ -89,7 +89,7 @@ Simple fuzzer calling `wasmer_runtime::instantiate` API with:
 - src: [src/simple_instantiate.rs](hfuzz/src/simple_instantiate.rs).
 - cmd: `cargo +nightly hfuzz run simple_instantiate`.
 
-## basic_instantiate_binaryen
+## instantiate_binaryen
 
 WARNING: This fuzzer can be broken because of binaryen-sys compilation issue depending of your environment.
 
