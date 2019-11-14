@@ -34,8 +34,8 @@ TODO
 
 TODO - create specific .md
 
-# Crashes analysis
+# Debugging / Crashes analysis
 
-TODO - create specific .md
+- Checkout [debug_crash_analysis.md](debug_crash_analysis.md) for more details.
 
 Patrick Ventuzelo - [pventuzelo](https://github.com/pventuzelo)
