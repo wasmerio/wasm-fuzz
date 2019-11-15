@@ -129,5 +129,9 @@ $ HFUZZ_RUN_ARGS="-t 2 -n 6" cargo +nightly hfuzz run compile
 ```
 
 <p align="center">
-	<img src="/images/honggfuzz_interface_compile.png" height="400px"/>
+	<img src="/images/honggfuzz_interface_validate.png" height="400px"/>
 </p>
+<p align="center">
+        <img src="/images/honggfuzz_interface_compile.png" height="400px"/>
+</p>
+
