@@ -24,17 +24,7 @@ Simple fuzzer calling `wasmer_runtime::compile`.
 - src: [src/compile.rs](afl-fuzz/src/compile.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/compile`.
 
-## compile_with_llvm [TODO FIX]
-
-TODO FIX: this fuzzer is broken because of LLVM compilation issue:
-``` sh
-	[...]
-	collect2: error: ld returned 1 exit status
-
-error: aborting due to previous error
-
-error: could not compile `afl-fuzz`.
-```
+## compile_with_llvm
 
 Fuzzer using `wasmer_runtime::compile_with` API with:
 - **backend: llvm**
@@ -118,16 +108,24 @@ Other stuff:
   -C            - crash exploration mode (the peruvian rabbit thing)
 ```
 
-## Compilation issues [TODO]
+## Compilation issues
 
-TODO - add more detail about this issue/fix.
+If you get this issue during compilation:
+```
+  = note: /usr/bin/ld: __sancov_guards
+  [...]
+          /usr/bin/ld: final link failed: bad value
+          collect2: error: ld returned 1 exit status
+```
+
+Try to run cargo build with the `RUSTFLAGS` value:
 ``` sh
 $ RUSTFLAGS='-C codegen-units=1' cargo afl build
 ```
 
 # Corpus minimization
 
-TODO - write specific section in README.md or here?
+Checkout [corpus_minimization.md](corpus_minimization.md#afl-rs-cargo-afl-cmin).
 
 # Example
 

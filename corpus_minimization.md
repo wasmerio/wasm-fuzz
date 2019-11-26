@@ -37,9 +37,12 @@ ARGS:
 
 ```
 
-## honggfuzz (TODO)
+## honggfuzz
 
-TODO
+Not yet available, i've asked [here](https://github.com/rust-fuzz/honggfuzz-rs/issues/26)
+
+Alternativaly, you can use the following `afl-rs cmin` command and provide the input folder of your hfuzz target.
+
 
 ## afl-rs (cargo afl cmin)
 
@@ -69,3 +72,24 @@ Minimization settings:
 
 For additional tips, please consult docs/README.
 ```
+
+Example:
+``` sh
+$ cargo afl cmin -i in -o out_min target/debug/compile_with_llvm -C
+
+corpus minimization tool for afl-fuzz by <lcamtuf@google.com>
+
+[*] Testing the target binary...
+[+] OK, 3289 tuples recorded.
+[*] Obtaining traces for input files in 'in'...
+    Processing file 40/40... 
+[*] Sorting trace sets (this may take a while)...
+[+] Found 12560 unique tuples across 40 files.
+[*] Finding best candidates for each tuple...
+    Processing file 40/40... 
+[*] Sorting candidate list (be patient)...
+[*] Processing candidates and writing output files...
+    Processing tuple 12560/12560... 
+[+] Narrowed down to 29 files, saved in 'out_min'.
+```
+

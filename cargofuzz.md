@@ -81,14 +81,10 @@ Some useful options (to be used as `cargo fuzz run fuzz_target -- <options>`) in
  - `-dict=<file>`: Use a keyword dictionary from specified file. See http://llvm.org/docs/LibFuzzer.html#dictionaries
 ```
 
-# Corpus minimization
+# Corpus & Testcases minimization
 
-TODO - write specific section in README.md or here?
-
-```
-    cmin    Corpus minifier
-    tmin    Test case minifier
-```
+- Checkout [corpus_minimization.md](corpus_minimization.md#cargo-fuzz-cargo-fuzz-cmin) for Corpus minimization.
+- Checkout [testcase_minimization.md](testcase_minimization.md#cargo-fuzz-cargo-fuzz-tmin) for Testcases minimization.
 
 # Example
 
