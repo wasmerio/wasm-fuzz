@@ -12,7 +12,7 @@ Check the official [INSTALL.md](https://github.com/SimonKagstrom/kcov/blob/maste
 
 ## How that's works?
 
-
+Here is the global command:
 ``` sh
 # First, go inside your fuzzing folder
 # like fuzz or hfuzz ou afl-fuzz
