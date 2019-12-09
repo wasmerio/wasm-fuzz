@@ -20,6 +20,10 @@ binaryen = "0.8.1"
 members = ["."]
 
 [[bin]]
+name = "diff_compile_backend"
+path = "src/diff_compile_backend.rs"
+
+[[bin]]
 name = "compile"
 path = "src/compile.rs"
 

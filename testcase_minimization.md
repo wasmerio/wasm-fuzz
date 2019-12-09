@@ -41,9 +41,7 @@ ARGS:
 
 ## honggfuzz (TODO)
 
-More details about cargo-fuzz [here](honggfuzz.md).
-
-TODO - add details.
+Not implemented.
 
 ## afl-rs (cargo afl tmin)
 
