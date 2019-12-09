@@ -66,6 +66,11 @@ Fuzzer using `wasmer_runtime::compile_with_config_with` API and the same config 
 - src: [src/compile_kwasmd_config.rs](hfuzz/src/compile_kwasmd_config.rs).
 - cmd: `cargo +nightly hfuzz run compile_kwasmd_config`.
 
+## diff_compile_backend
+- TODO.
+- src: [src/diff_compile_backend.rs](hfuzz/src/diff_compile_backend.rs)
+- cmd: `cargo hfuzz run diff_compile_backend`
+
 ## validate
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
