@@ -14,6 +14,7 @@ wasmer-runtime-core = { path = "../lib/runtime-core" }
 wasmer = { path = "../" }
 libfuzzer-sys = { git = "https://github.com/rust-fuzz/libfuzzer-sys.git" }
 wasmer-llvm-backend = { path = "../lib/llvm-backend" }
+wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
 
 # Prevent this from interfering with workspaces
 [workspace]
@@ -26,6 +27,10 @@ path = "fuzz_targets/compile.rs"
 [[bin]]
 name = "compile_with_llvm"
 path = "fuzz_targets/compile_with_llvm.rs"
+
+[[bin]]
+name = "diff_compile_backend"
+path = "fuzz_targets/diff_compile_backend.rs"
 
 [[bin]]
 name = "simple_instantiate"
