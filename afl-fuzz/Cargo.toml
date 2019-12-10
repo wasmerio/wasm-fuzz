@@ -11,6 +11,7 @@ afl = "0.5"
 wasmer-runtime = { path = "../lib/runtime" }
 wasmer-runtime-core = { path = "../lib/runtime-core" }
 wasmer-llvm-backend = { path = "../lib/llvm-backend" }
+wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
 wasmer = { path = "../" }
 
 # Prevent this from interfering with workspaces
@@ -28,6 +29,10 @@ path = "src/compile.rs"
 [[bin]]
 name = "compile_with_llvm"
 path = "src/compile_with_llvm.rs"
+
+[[bin]]
+name = "diff_compile_backend"
+path = "src/diff_compile_backend.rs"
 
 [[bin]]
 name = "validate"
