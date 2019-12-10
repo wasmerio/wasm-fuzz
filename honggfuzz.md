@@ -67,9 +67,13 @@ Fuzzer using `wasmer_runtime::compile_with_config_with` API and the same config 
 - cmd: `cargo +nightly hfuzz run compile_kwasmd_config`.
 
 ## diff_compile_backend
-- TODO.
+
+Fuzzer twice `wasmer_runtime::compile_with` API with respectively `llvm` and `singlepass` backends.
+Then, results of both compilations are compared to detect differences in compilation.
+- **backend: llvm**
+- **backend: SinglePassCompiler**
 - src: [src/diff_compile_backend.rs](hfuzz/src/diff_compile_backend.rs)
-- cmd: `cargo hfuzz run diff_compile_backend`
+- cmd: `cargo +nightly hfuzz run diff_compile_backend`
 
 ## validate
 
