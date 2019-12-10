@@ -1,0 +1,22 @@
+[package]
+name = "compile_debug"
+version = "0.1.0"
+authors = ["Patrick Ventuzelo <ventuzelo.patrick@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wasmer-runtime = { path = "../lib/runtime" }
+wasmer-runtime-core = { path = "../lib/runtime-core" }
+wasmer = { path = "../" }
+wasmer-llvm-backend = { path = "../lib/llvm-backend" }
+wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "diff_compile_debug"
+path = "src/main.rs"
