@@ -46,20 +46,20 @@ fuzz_target!(|data: &[u8]| {
             assert_eq!(ai.em_symbol_map, bi.em_symbol_map);
             assert_eq!(ai.custom_sections, bi.custom_sections);
 
-            println!("[+] OK for both");
+            //println!("[+] OK for both");
         },
-        (Err(err_a), Ok(_err_b)) => {
+        (Err(_err_a), Ok(_err_b)) => {
             //println!("[-] Error LLVM");
             //println!("{:?}", err_a);
             panic!("Only backend LLVM return an Error")
         },
-        (Ok(_err_a), Err(err_b)) => {
+        (Ok(_err_a), Err(_err_b)) => {
             //println!("[-] Error Singlepass");
             //println!("{:?}", err_b);
             panic!("Only backend Singlepass return an Error")
         },
         (Err(_err_a), Err(_err_b)) => {
-            println!("[+] Error for both");
+            //println!("[+] Error for both");
         },
     }
 });
