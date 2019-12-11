@@ -29,6 +29,15 @@ Fuzzer using `wasmer_runtime::compile_with` API with:
 - src: [fuzz_targets/compile_with_llvm.rs](fuzz/fuzz_targets/compile_with_llvm.rs).
 - cmd: `cargo +nightly fuzz run compile_with_llvm`.
 
+## diff_compile_backend
+
+Fuzzer twice `wasmer_runtime::compile_with` API with respectively `llvm` and `singlepass` backends.
+Then, results of both compilations are compared to detect differences in compilation.
+- **backend: llvm**
+- **backend: SinglePassCompiler**
+- src: [fuzz_targets/diff_compile_backend.rs](fuzz/fuzz_targets/diff_compile_backend.rs)
+- cmd: `cargo +nightly fuzz run diff_compile_backend`
+
 ## validate
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
