@@ -1,0 +1,28 @@
+[package]
+name = "debug_all_coverage"
+version = "0.1.0"
+authors = ["Patrick Ventuzelo <ventuzelo.patrick@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"
+
+[dependencies]
+wasmer-runtime = { path = "../lib/runtime" }
+wasmer-runtime-core = { path = "../lib/runtime-core" }
+wasmer-singlepass-backend = { path = "../lib/singlepass-backend" }
+wasmer-llvm-backend = { path = "../lib/llvm-backend" }
+wasmer = { path = "../" }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "all_coverage"
+path = "src/main.rs"
