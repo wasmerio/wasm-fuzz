@@ -39,7 +39,7 @@ ARGS:
     <CRASH>     Crashing test case to minimize
 ```
 
-## honggfuzz (TODO)
+## honggfuzz
 
 Not implemented.
 
@@ -119,6 +119,68 @@ Sometimes your target program might crash with a different crash accidentally fo
 
 Example [here](https://github.com/googleprojectzero/halfempty#verifying-crashes).
 
+## wasm-opt
+
+`wasm-opt` can be used to remove part of the code and reduce the size of the crashing sample.
+
+### Interesting options
+
+``` sh
+$ wasm-opt -h | grep remove
+  --dae                                         removes arguments to calls in an
+  --dae-optimizing                              removes arguments to calls in an
+                                                where we removed 
+  --dce                                         removes unreachable code
+  --duplicate-function-elimination              removes duplicate functions
+  --duplicate-import-elimination                removes duplicate imports
+  --no-exit-runtime                             removes calls to atexit(), which
+  --remove-imports                              removes imports and replaces
+  --remove-memory                               removes memory segments
+  --remove-non-js-ops                           removes operations incompatible
+  --remove-unused-brs                           removes breaks from locations
+  --remove-unused-module-elements               removes unused module elements
+  --remove-unused-names                         removes names from locations
+  --remove-unused-nonfunction-module-elements   removes unused module elements
+  --rse                                         remove redundant local.sets
+  --untee                                       removes local.tees, replacing
+  --vacuum                                      removes obviously unneeded code
+                                                and remove them at runtime as 
+[...]
+  --remove-imports
+  --remove-memory
+  --remove-non-js-ops
+  --remove-unused-brs
+  --remove-unused-module-elements
+  --remove-unused-names
+  --remove-unused-nonfunction-module-elements
+  --reorder-functions
+  --simplify-globals
+  --simplify-globals-optimizing
+  --simplify-locals
+  --simplify-locals-nonesting
+  --simplify-locals-nostructure
+  --simplify-locals-notee
+  --simplify-locals-notee-nostructure
+  --optimize-added-constants
+  --optimize-added-constants-propagate
+  --optimize-instructions
+  --optimize-stack-ir
+  --minify-imports
+  --minify-imports-and-exports
+[...]
+```
+
+## WebAssembly text format
+
+Convert the crashing sample into its text represention.
+Then, remove progressively the bigest part of the module, and translate back the module into binary format to check if the crash still occurs.
+
+Example:
+``` sh
+$ wasm2wat crash.wasm -o crash.wast
+# remove some wasm sections and instructions
+$ wat2wasm crash.wast -o crash_bis.wasm
+```
 
 
 

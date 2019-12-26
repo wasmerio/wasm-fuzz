@@ -21,10 +21,6 @@ Fuzzers for wasmer and tips/commands to run them.
 - Fuzzers are inside [afl-fuzz](afl-fuzz) folder.
 - Checkout [afl.md](afl.md) for more details.
 
-## Custom fuzzers
-
-TODO
-
 # Corpus minimization
 
 - Checkout [corpus_minimization.md](corpus_minimization.md) for more details.
@@ -32,7 +28,7 @@ TODO
 
 # Code coverage
 
-TODO - create specific .md
+- Checkout [code_coverage.md](code_coverage.md) for more details.
 
 # Debugging / Crashes analysis
 

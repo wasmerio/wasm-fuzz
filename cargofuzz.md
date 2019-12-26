@@ -56,8 +56,6 @@ Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_feat
 
 ## simple_instantiate [USELESS/DEPRECATED]
 
-TODO - verify if still the case with cargo-fuzz 0.5.4
-
 Not really interesting to use this fuzzer because every valid errors through by wasmer will be considered as crash by libfuzzer. In practice, that mean the fuzzer will crash almost immediately.
 
 - src: [fuzz_targets/simple_instantiate.rs](fuzz/fuzz_targets/simple_instantiate.rs).

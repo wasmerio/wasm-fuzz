@@ -31,15 +31,6 @@ Fuzzer using `wasmer_runtime::compile_with` API with:
 - src: [src/compile_with_llvm.rs](afl-fuzz/src/compile_with_llvm.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/compile_with_llvm`.
 
-## diff_compile_backend
-
-Fuzzer twice `wasmer_runtime::compile_with` API with respectively `llvm` and `singlepass` backends.
-Then, results of both compilations are compared to detect differences in compilation.
-- **backend: llvm**
-- **backend: SinglePassCompiler**
-- src: [src/diff_compile_backend.rs](afl-fuzz/src/diff_compile_backend.rs)
-- cmd: `cargo afl fuzz -i in -o out target/debug/diff_compile_backend`
-
 ## validate
 
 Simple fuzzer calling `wasmer_runtime_core::validate_and_report_errors_with_features` with:
@@ -62,6 +53,15 @@ Simple fuzzer calling `wasmer_runtime::instantiate` API with:
 - **imports: None**
 - src: [src/simple_instantiate.rs](afl-fuzz/src/simple_instantiate.rs).
 - cmd: `cargo afl fuzz -i in -o out target/debug/simple_instantiate`.
+
+## diff_compile_backend
+
+Fuzzer twice `wasmer_runtime::compile_with` API with respectively `llvm` and `singlepass` backends.
+Then, results of both compilations are compared to detect differences in compilation.
+- **backend: llvm**
+- **backend: SinglePassCompiler**
+- src: [src/diff_compile_backend.rs](afl-fuzz/src/diff_compile_backend.rs)
+- cmd: `cargo afl fuzz -i in -o out target/debug/diff_compile_backend`
 
 ## diff_compile [TODO FIX]
 

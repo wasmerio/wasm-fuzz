@@ -14,6 +14,17 @@ Prefered way is to compiled `wasmer` with:
 $ RUSTFLAGS=-g cargo build --release --features backend-singlepass,backend-llvm,loader-kernel,debug,trace
 ```
 
+# Calling wasmer using APIs
+
+Check [debug_tools](debug_tools/) and [debug_all_coverage](coverage/debug_all_coverage/).
+
+Copy them into `wasmer` folder and build them with:
+``` sh
+$ cd debug_all_coverage
+$ RUSTFLAGS=-g cargo build
+$ ./target/debug/all_coverage <wasm_file_to_test>
+```
+
 # Backtracing 
 
 ## RUST_BACKTRACE=1
@@ -60,7 +71,11 @@ If you want more details, you can use the [backtrace-rs](https://github.com/rust
 
 # Debugger (gdb, lldb)
 
-TODO
+More informations here:
+- https://bitshifter.github.io/rr+rust/index.html#1
+- http://smallcultfollowing.com/babysteps/blog/2018/09/21/office-hours-0-debugging-with-gdb/
+- https://os.phil-opp.com/set-up-gdb/
+- https://sourceware.org/gdb/current/onlinedocs/gdb/Rust.html
 
 # Crash minimization
 
