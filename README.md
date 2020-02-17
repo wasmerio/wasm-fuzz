@@ -1,10 +1,10 @@
-# wasm-fuzz (should be renamed wasmer-fuzz ??)
+# wasm-fuzz
 
-Information about fuzzing, code coverage and crashes analysis of wasmer.
+Information about fuzzing, code coverage and crashes analysis of [Wasmer](https://github.com/wasmerio/wasmer).
 
 # Fuzzers
 
-Fuzzers for wasmer and tips/commands to run them.
+Fuzzers for Wasmer and tips/commands to run them.
 
 ## cargo-fuzz (libfuzzer)
 
